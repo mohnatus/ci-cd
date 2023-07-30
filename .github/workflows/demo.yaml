@@ -29,4 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
       - name: Deploy
-        run: echo Deploying...
+        run: npm run build
+      - name: Uplodad Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          path: build
+          name: build-files
